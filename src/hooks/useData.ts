@@ -28,7 +28,9 @@ const useData = <T>(endpoint: string, requestConfig?: AxiosRequestConfig, deps?:
                 setError(err.message);
                 setLoading(false);
             });
-        return () => controller.abort();
+
+        //TODO Remove comment on abort
+        // return () => controller.abort();
     }, deps ? [...deps] : []);
 
     return {data, error, isLoading};
